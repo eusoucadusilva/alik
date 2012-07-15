@@ -15,6 +15,7 @@
 
   <fieldset><legend><h2>Pessoal</h2></legend>
     <div class="inputs">
+      <%= f.collection_select :city_id, City.all, :id, :name %>
       <%= f.input :avatar_url %>
       <%= f.input :phone %>
       <%= f.input :teaching,            :collection => 1..5 %>
