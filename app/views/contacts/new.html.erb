@@ -1,0 +1,41 @@
+<% title t(".title") %>
+
+<% content_for :container_title do %>
+  <h1>Assessoria jurídica gratuita</h1>
+<% end %>
+
+<h2><%= t(".container_title") %></h2>
+
+<%= simple_form_for @contact do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :message, :as => :text %>
+  <%= f.button :submit, :class => "btn btn-success" %>
+<% end %>
+
+
+<% content_for :sidebar do %>
+<h2>Destaques</h2>
+ <div id="profile">
+   <img alt="" src="http://graph.facebook.com/100001994980755/picture?type=square" width="50" class="avatar" /> <span class="name">Daniel Feio</span>
+   <dl>
+     <dt><span>Carteira OAB:</span> 14.446</dt>
+     <dt><span>Cidade:</span> Belem-Pa</dt>
+     <dt><span>Telefone:</span> 91 81177947</dt>
+     <dt><span>E-mail:</span> dfeio@hotmail.com</dt>
+     <dt><span>Índice:</span> 5,3 - Muito Bom</dt>
+   </dl>
+ </div>
+ 
+ <div id="profile">
+    <img alt="" src="http://graph.facebook.com/100001994980755/picture?type=square" width="50" class="avatar" /> <span class="name">Daniel Feio</span>
+    <dl>
+      <dt><span>Carteira OAB:</span> 14.446</dt>
+      <dt><span>Cidade:</span> Belem-Pa</dt>
+      <dt><span>Telefone:</span> 91 81177947</dt>
+      <dt><span>E-mail:</span> dfeio@hotmail.com</dt>
+      <dt><span>Índice:</span> 5,3 - Muito Bom</dt>
+    </dl>
+  </div>
+<% end %>

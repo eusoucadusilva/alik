@@ -1,0 +1,77 @@
+<header>
+  <div id='masthead'>
+
+    <% if user_signed_in? %>
+      <%=image_tag avatar_url(current_user) , :class =>"image-profile"%>
+
+      Logado como <strong><%= current_user.username %></strong>.<br />
+      <%= link_to 'Editar perfil', edit_user_registration_path %> | 
+      <%= link_to "Sair", destroy_user_session_path, method: :delete %>
+    <% else %>
+      <div id='sign-in'>
+        Você é advogado? 
+        <%= link_to "Entrar", new_user_session_path, :class => "btn-large btn-success" %> ou 
+        <%= link_to "Cadastre-se gratuitamente", new_user_registration_path, :class => "btn-large btn-success" %>
+      </div>  
+    <% end %>
+
+  </div>
+  <div id='logo'><%=link_to "Alik", root_path %></div>
+  <nav class="navigation">
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Quem Somos", about_path %></li>
+      <li><%= link_to "Contato", new_contact_path %></li>
+    </ul>
+  </nav>
+</header>
+<hr>
+<style>
+.image-profile{
+  float:left;
+  border-style:solid;
+  margin-right:4px;
+
+}
+
+.navigation{
+  font-size: 14px;
+  padding:0px;
+  margin:17px 0 0 15px;
+  float: left;
+  list-style:none;
+  -moz-box-shadow: 0 0 10px #CCC;
+  -webkit-box-shadow: 0 0 10px #CCC;
+  -ms-box-shadow: 0 0 10px #CCC;
+  -o-box-shadow: 0 0 10px #CCC;
+  box-shadow: 0 0 10px #CCC;
+  -webkit-border-top-left-radius: 4px;
+  -webkit-border-top-right-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -moz-border-radius-topright: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+
+}
+.navigation ul li { margin: 0 5px; padding: 5px 0 5px 2px; float: left; position: relative; list-style: none;}
+.navigation ul li a {
+    text-decoration: none; display: block; padding:  8px 15px; margin: 0; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -webkit-transition: all .3s linear;
+
+}
+.navigation ul li a:hover {
+  background: -moz-linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FAFAFA), color-stop(100%, #EFEFEF));
+  background: -webkit-linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
+  background: -o-linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
+  background: -ms-linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
+  background: linear-gradient(top, #FAFAFA 0%, #EFEFEF 100%);
+  color: #666;
+
+}
+footer p{
+  margin: 1.4em 0;
+  line-height: 1.4;
+  font-size: 14px;
+  text-align: justify;
+}
+</style>

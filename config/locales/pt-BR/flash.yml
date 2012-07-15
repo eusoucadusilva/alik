@@ -1,0 +1,23 @@
+pt-BR:
+  flash:
+    sendmail:
+      notice: "Sua mensagem foi enviada com sucesso"
+
+
+  devise:
+   registrations:
+    user:
+     signed_up: "Usuario registrado com sucesso!"
+
+     updated:	"Usuario atualizado com sucesso!"
+
+   sessions:
+    user:
+     signed_out:	"Sessao encerrada com sucesso!"
+     signed_in:		"Bem vindo(a), sessao iniciada com sucesso!"
+
+
+   failure:
+    user:
+    unauthenticated: "Para continuar voce deve estar autenticado!"
+    invalid:		 "Usuario/Senha invalidos!"

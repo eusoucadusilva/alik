@@ -1,0 +1,19 @@
+pt-BR:
+  contacts:
+    new:
+      container_title: "Enviar email de contato"
+      title: "Contato"
+
+  helpers:
+    submit:
+      contact:
+        create: "Enviar email de contato"
+
+  mail_form:
+    models:
+      contact: "Your site contact form"
+    attributes:
+      contact:
+        name: "Nome"
+        email: "E-mail"
+        message: "Mensagem"

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>">
+  <head>
+    <meta charset="UTF-8">
+    <title>Alik | <%= content_for?(:title) ? yield(:title) : "Alik " %></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <%= yield(:header_tags) %>
+
+    <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Imprima" %>
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= favicon %>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body id="<%= controller.controller_name %>">
+
+    <div id="wrap">
+      <%= render("shared/header") %>
+      <div id="container" class="has_sidebar">
+
+        <% if content_for?(:container_title) %>
+          <div id='container-title'>
+            <%= yield(:container_title) %>
+          </div>
+        <% end %>
+
+        <aside>
+
+          <%= yield(:sidebar) %>
+        </aside>
+
+        <section role="main">
+          <% flash.each do |name, msg| %>
+            <%= content_tag :div, msg, id: "flash_#{name}" %>
+          <% end %>
+          <%= yield %>
+        </section>
+      </div>
+      <%= render("shared/footer") %>
+    </div>
+
+    <%= analytics "UA-32025057-1" %>
+  </body>
+</html>
+

@@ -1,0 +1,15 @@
+<h2>Área restrita</h2>
+
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div class="inputs">
+    <%= f.input :email,		:required => true %>
+    <%= f.input :password,	:required => true %>
+    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, "Entrar",:class => "btn-large btn-primary" %>
+  </div>
+<% end %>
+
+<%= render "links" %>

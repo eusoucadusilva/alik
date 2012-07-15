@@ -1,0 +1,9 @@
+pt-BR:
+  questions:
+    index:
+      container_title: "Últimas perguntas"
+      title: "Home"
+      
+    published_at: "Enviada em: %{time}"
+
+

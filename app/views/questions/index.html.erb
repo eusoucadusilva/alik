@@ -1,0 +1,86 @@
+<% title t(".title") %>
+
+<% content_for :container_title do %>
+  <h1>Assessoria jurídica gratuita</h1>
+<% end %>
+
+<% content_for :sidebar do %>
+<h2>Destaques</h2>
+ <div id="profile">
+   <img alt="" src="http://graph.facebook.com/100001994980755/picture?type=square" width="50" class="avatar" /> <span class="name">Daniel Feio</span>
+   <dl>
+     <dt><span>Carteira OAB:</span> 14.446</dt>
+     <dt><span>Cidade:</span> Belem-Pa</dt>
+     <dt><span>Telefone:</span> 91 81177947</dt>
+     <dt><span>E-mail:</span> dfeio@hotmail.com</dt>
+     <dt><span>Índice:</span> 5,3 - Muito Bom</dt>
+   </dl>
+ </div>
+
+ <div id="profile">
+    <img alt="" src="http://graph.facebook.com/100001994980755/picture?type=square" width="50" class="avatar" /> <span class="name">Daniel Feio</span>
+    <dl>
+      <dt><span>Carteira OAB:</span> 14.446</dt>
+      <dt><span>Cidade:</span> Belem-Pa</dt>
+      <dt><span>Telefone:</span> 91 81177947</dt>
+      <dt><span>E-mail:</span> dfeio@hotmail.com</dt>
+      <dt><span>Índice:</span> 5,3 - Muito Bom</dt>
+    </dl>
+  </div>
+<% end %>
+
+<h2><%= t(".container_title") %></h2>
+
+<ul id='questions'>
+  <% @questions.each do |question| %>
+    <li>
+      <div class='answers'>
+        <div class='count'>
+          <span>1</span>
+          resposta
+        </div>
+        <a class='lawyer' href='/'><img alt="" height="16" src="http://graph.facebook.com/100003922746457/picture?type=square" width="16" />Roberto</a>
+      </div>
+      <p class='requester'>
+        <strong>Carlos Eduardo</strong>
+        perguntou:
+      </p>
+      <h3><%= question.title %></h3>
+      <p class='sent-at'><%= t("questions.published_at", :time => l(question.created_at, :format => :short)) %></p>
+    </li>
+  <% end %>
+</ul>
+
+<div class="digg_pagination">
+  <%= will_paginate @questions %>
+</div>
+
+<!-- Messages
+<p class="alert">
+  nenhuma pergunta encontrada
+</p>
+
+<p class="error">
+  nenhuma pergunta encontrada
+</p>
+
+<p class="notice">
+  nenhuma pergunta encontrada
+</p>
+-->
+
+<style>
+section.profile img{
+  border: 1px solid #CCC;
+  padding: 1px;
+  background-color: white;
+}
+span.name{
+  font-size: 20px;
+  padding-top: 2px;
+  position: relative;
+  bottom: 20px;
+  padding-left: 10px;
+}
+</style>
+
