@@ -4,4 +4,6 @@ class Question < ActiveRecord::Base
 
   validates_presence_of :title, :description, :requester_name, :requester_email,
                         :requester_phone_area_code, :requester_phone_number
+
+  belongs_to :user
 end

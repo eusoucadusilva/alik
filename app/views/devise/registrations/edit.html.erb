@@ -1,4 +1,28 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <div id="score">
+
+    <div id="avarage">
+
+      <div class="column alik">
+          <%=image_tag('alik-logo-small.png')%>
+      </div>
+
+      <div class="column">
+        <span id="score-info">
+          <%= User.find(1).human_alik_rate %>
+        </span>
+        <br />
+        <br />
+      </div>
+    </div>
+    <br />
+    <p id="counter">
+      <br />
+      <strong id="useful">0</strong> respostas positivas
+      <br />
+      <strong id="useless">0</strong>respostas negativas
+    </p>
+  </div>
+
 
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= f.error_notification %>
@@ -15,7 +39,12 @@
 
   <fieldset><legend><h2>Pessoal</h2></legend>
     <div class="inputs">
-      <%= f.collection_select :city_id, City.all, :id, :name %>
+
+      <%= f.label :city_id %>
+      <div class="input">
+        <%= f.collection_select :city_id, City.all, :id, :name %>
+      </div>
+
       <%= f.input :avatar_url %>
       <%= f.input :phone %>
       <%= f.input :teaching,            :collection => 1..5 %>

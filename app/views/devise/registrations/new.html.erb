@@ -26,17 +26,16 @@
 	</fieldset>
 
 	<fieldset><legend><h2>Experiência</h2></legend>
-		<div class="inputs">
-
-			<%= f.input :postgraduate,        :as => :check_boxes %>
-			<%= f.input :doctorate_in_law,    :as => :check_boxes %>
-			<%= f.input :master_of_law,       :as => :check_boxes %>
-
-			<%= f.input :postgraduate_in_law, :as => :check_boxes %>
-			<%= f.input :foreign_laguage,     :as => :check_boxes %>
-			<%= f.input :terms_of_use,        :as => :check_boxes %>
-	  	</div>
-	</fieldset>
+    <div class="inputs">
+        <%= f.input :postgraduate,        :as => :boolean %>
+        <%= f.input :doctorate_in_law,    :as => :boolean %>
+        <%= f.input :master_of_law,       :as => :boolean %>
+        
+        <%= f.input :postgraduate_in_law, :as => :boolean %>
+        <%= f.input :foreign_laguage,     :as => :boolean%>
+        <%= f.input :terms_of_use,        :as => :boolean %>
+      </div>
+  </fieldset>
   
   <div class="actions">
     <%= f.button :submit, "Registrar", :class => "btn-large btn-primary" %>
